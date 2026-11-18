@@ -1,0 +1,1562 @@
+# BUILDFLOW — HR & COMPLIANCE DASHBOARD
+## Complete Product Design & Development Prompt
+
+Build a premium, enterprise-grade **HR & Compliance Dashboard** for BuildFlow, a multi-tenant construction workforce and project operations SaaS platform designed for construction companies in India.
+
+This must be a complete, functional, multi-page HR management application — not a static dashboard, generic admin template or decorative collection of cards.
+
+The HR & Compliance module manages the employee lifecycle, workforce directory, employee onboarding, employment records, attendance exceptions, leave management, employee documents, compliance tracking, contractor workforce records and HR reporting.
+
+The application must support construction companies of different sizes:
+
+- Small companies with one HR administrator handling multiple responsibilities.
+- Medium companies with separate HR, recruitment and payroll teams.
+- Large enterprises with HR Managers, HR Executives, Compliance Officers, HR Business Partners and regional HR administrators.
+
+The system must support permanent employees, contractual workers, daily-wage labour, temporary employees, hourly workers, skilled and unskilled labour, project-based workers and contractor personnel.
+
+Build the application from scratch with a professional information architecture, real working interactions, responsive layouts, realistic Indian construction-industry data and reusable components.
+
+---
+
+# 1. TECHNOLOGY STACK
+
+Use:
+
+- React + TypeScript + Vite
+- Tailwind CSS
+- shadcn/ui
+- Lucide React icons
+- React Router
+- TanStack Query
+- React Hook Form + Zod
+- Zustand
+- Recharts
+- Framer Motion
+- Supabase-ready service architecture
+
+Use realistic mock data and local service functions initially.
+
+Structure the code for future integration with:
+
+- Supabase Authentication.
+- Supabase PostgreSQL.
+- Supabase Row Level Security.
+- Supabase Realtime.
+- Supabase Edge Functions.
+- Private document storage through Cloudflare R2 or Supabase Storage.
+
+Do not put secrets in frontend code.
+
+# 2. DESIGN SYSTEM
+
+Create a premium enterprise HR management interface consistent with the other BuildFlow role dashboards.
+
+Colors:
+- Primary navy: #101F35
+- Primary blue: #2563EB
+- Background: #F5F7FA
+- Cards: #FFFFFF
+- Main text: #172B4D
+- Secondary text: #64748B
+- Success: #16A34A
+- Warning: #F59E0B
+- Danger: #DC2626
+- Purple: #7C3AED
+
+Typography: Inter.
+
+Design principles:
+- Professional enterprise SaaS appearance.
+- Clean white cards.
+- Subtle shadows and borders.
+- Consistent spacing.
+- Clear information hierarchy.
+- Modern tables with compact row heights.
+- Attractive charts and data visualisations.
+- Clear status badges.
+- Useful filters and search.
+- Avoid excessive gradients and unnecessary decoration.
+
+Use appropriate icons for employees, onboarding, attendance, leaves, documents, compliance, departments and reports.
+
+# 3. APPLICATION LAYOUT
+
+Create a dedicated HR workspace.
+
+## Sidebar navigation
+
+1. Overview
+2. Employee Directory
+3. Employee Onboarding
+4. Employment Records
+5. Attendance Management
+6. Attendance Exceptions
+7. Leave Management
+8. Employee Documents
+9. Contractor Workforce
+10. Departments & Designations
+11. Compliance Centre
+12. Training & Certifications
+13. HR Requests
+14. HR Reports & Analytics
+15. Notifications
+16. HR Settings
+17. Profile
+
+Use:
+- Fixed collapsible sidebar on desktop.
+- Responsive navigation on tablets.
+- Compact header and bottom navigation on mobile.
+- Additional navigation items inside a More menu on smaller screens.
+
+## Top navigation
+
+Include:
+- Current page title.
+- Breadcrumb navigation.
+- Global employee search.
+- Date selector where relevant.
+- Notifications.
+- HR user profile.
+- Quick action button.
+
+Quick actions:
+- Add Employee.
+- Start Onboarding.
+- Review Attendance Exceptions.
+- Review Leave Requests.
+- Upload Compliance Document.
+
+# 4. HR OVERVIEW DASHBOARD
+
+Create a useful HR overview screen.
+
+The HR administrator must immediately understand:
+
+- How many employees are active?
+- How many new employees joined this month?
+- How many employees are on leave?
+- How many employees have incomplete onboarding?
+- How many attendance exceptions are pending?
+- How many employee documents are expiring?
+- How many compliance requirements are overdue?
+- Which projects or sites need HR attention?
+
+## KPI cards
+
+Create:
+
+1. Total Employees
+2. Active Employees
+3. New Joiners This Month
+4. Employees on Leave Today
+5. Pending Onboarding
+6. Attendance Exceptions
+7. Documents Expiring Soon
+8. Compliance Items Overdue
+
+Each KPI card should include:
+- Value.
+- Small trend or comparison if data exists.
+- Relevant icon.
+- Status indicator where useful.
+- Click-through navigation to the underlying records.
+
+## HR workforce charts
+
+Include:
+
+1. Workforce by Employment Type.
+2. Employees by Department.
+3. Workforce by Project.
+4. Monthly Joining vs Exits.
+5. Attendance Exception Trends.
+6. Leave Utilisation.
+7. Document Expiry Overview.
+8. Compliance Completion Status.
+
+All charts must use consistent underlying sample records.
+
+## HR action centre
+
+Create an actionable section displaying:
+
+- New employees awaiting onboarding completion.
+- Employee documents awaiting verification.
+- Attendance exceptions awaiting review.
+- Leave requests awaiting approval.
+- Expiring employee documents.
+- Expiring contractor licences or certificates.
+- Compliance tasks nearing deadlines.
+- Employees with incomplete profile information.
+
+Each item must navigate to its actual record.
+
+# 5. EMPLOYEE DIRECTORY
+
+This is one of the most important modules.
+
+Create a professional employee directory with card and table views.
+
+## Directory table columns
+
+- Employee ID.
+- Employee photograph or initials.
+- Employee name.
+- Designation.
+- Department.
+- Employment type.
+- Project assignment.
+- Site assignment.
+- Reporting manager.
+- Joining date.
+- Employment status.
+- Contact information.
+
+## Search and filters
+
+Allow search by:
+- Employee name.
+- Employee ID.
+- Phone number.
+- Email.
+- Designation.
+
+Filters:
+- Active.
+- Inactive.
+- On Leave.
+- Notice Period.
+- Suspended.
+- Terminated.
+- Department.
+- Designation.
+- Project.
+- Site.
+- Employment type.
+- Joining date.
+- Skill or trade.
+
+## Employee types
+
+Support:
+- Permanent.
+- Contractual.
+- Temporary.
+- Daily Wage.
+- Hourly.
+- Weekly Wage.
+- Piece Rate.
+- Project Based.
+- Intern or Trainee.
+- Contractor Personnel.
+
+## Employee profile
+
+When HR opens an employee, create a detailed employee workspace with these tabs:
+
+1. Overview
+2. Personal Information
+3. Employment Details
+4. Department & Reporting
+5. Project & Site Assignments
+6. Attendance
+7. Leave History
+8. Documents
+9. Training & Certifications
+10. HR Requests
+11. Activity History
+
+### Employee overview
+
+Display:
+- Profile photograph.
+- Employee ID.
+- Full name.
+- Designation.
+- Department.
+- Employment type.
+- Employment status.
+- Joining date.
+- Reporting manager.
+- Current project.
+- Current site.
+- Contact information.
+- Emergency contact status.
+- Profile completion percentage.
+
+### Personal information
+
+Fields:
+- Full legal name.
+- Date of birth.
+- Gender, if collected and legally appropriate.
+- Contact number.
+- Email.
+- Current address.
+- Permanent address.
+- Emergency contact name.
+- Emergency contact number.
+- Emergency contact relationship.
+
+Sensitive personal data must have restricted access.
+
+### Employment details
+
+Fields:
+- Employee ID.
+- Designation.
+- Department.
+- Employment type.
+- Joining date.
+- Probation end date.
+- Contract start date.
+- Contract end date.
+- Reporting manager.
+- Work location.
+- Assigned project.
+- Assigned site.
+- Shift.
+- Employment status.
+
+Do not expose salary details to every HR user by default. Create separate salary-information permissions for authorised HR or payroll personnel.
+
+### Employee actions
+
+Allow authorised HR users to:
+- Edit employee information.
+- Change employment status through an approved workflow.
+- Update department.
+- Change designation.
+- Request project reassignment.
+- Assign reporting manager.
+- Upload documents.
+- View attendance history.
+- Review leave history.
+- Initiate employee exit workflow.
+
+All important changes must be audited.
+
+# 6. EMPLOYEE ONBOARDING
+
+Build a complete employee onboarding workflow.
+
+The HR team must be able to onboard an employee from initial registration through verification and activation.
+
+## Onboarding overview
+
+Show:
+- Invitations sent.
+- Profiles pending completion.
+- Documents pending upload.
+- Documents awaiting verification.
+- Pending approvals.
+- Completed onboarding.
+- Onboarding overdue.
+
+## New employee onboarding form
+
+Use a multi-step wizard.
+
+### Step 1 — Basic information
+
+- Full name.
+- Phone number.
+- Email.
+- Date of birth.
+- Photograph.
+- Emergency contact.
+
+### Step 2 — Employment information
+
+- Employee ID.
+- Designation.
+- Department.
+- Employment type.
+- Joining date.
+- Reporting manager.
+- Branch.
+- Work location.
+- Project assignment.
+- Site assignment.
+- Shift.
+
+### Step 3 — Employment documents
+
+Allow upload of relevant documents:
+- Identity proof.
+- Address proof.
+- Photograph.
+- Education or qualification certificates.
+- Previous employment documents, where applicable.
+- Signed employment agreement.
+- Other company-required documents.
+
+Do not assume every document is mandatory for every employment category.
+
+### Step 4 — Verification
+
+Display:
+- Document name.
+- Uploaded date.
+- Verification status.
+- Verified by.
+- Verification date.
+- Rejection reason, if rejected.
+
+Statuses:
+- Not Uploaded.
+- Uploaded.
+- Under Review.
+- Verified.
+- Rejected.
+- Resubmission Required.
+- Expired.
+
+### Step 5 — Review & activation
+
+Show a summary of all information.
+
+Actions:
+- Save as Draft.
+- Send Invitation.
+- Submit for Approval.
+- Activate Employee.
+
+Activation must follow the configured company approval workflow.
+
+Do not mark an employee as fully onboarded if required documents or approvals remain incomplete.
+
+## Onboarding progress tracker
+
+Display steps:
+1. Employee Registration.
+2. Employment Details.
+3. Document Collection.
+4. Document Verification.
+5. Policy Acknowledgement.
+6. Account Activation.
+
+Allow HR to identify exactly which stage is incomplete.
+
+# 7. EMPLOYMENT RECORDS
+
+Create a dedicated employment records page.
+
+Manage:
+- Appointment letters.
+- Employment agreements.
+- Contract renewals.
+- Probation.
+- Confirmation.
+- Designation changes.
+- Department transfers.
+- Reporting manager changes.
+- Project transfers.
+- Site transfers.
+- Notice period.
+- Resignation.
+- Termination.
+- Employee exit.
+
+## Employment lifecycle
+
+Support these statuses:
+
+- Draft.
+- Onboarding.
+- Active.
+- Probation.
+- Confirmed.
+- On Leave.
+- Notice Period.
+- Suspended.
+- Exited.
+- Terminated.
+
+Create workflows for:
+- New employment record.
+- Contract extension.
+- Probation review.
+- Confirmation.
+- Internal transfer.
+- Resignation processing.
+- Exit clearance.
+
+Historical employment records must be preserved.
+
+Do not overwrite previous designations, departments, salaries or assignments. Store effective dates and change history.
+
+# 8. ATTENDANCE MANAGEMENT
+
+Build an HR attendance management workspace.
+
+Attendance data must come from the shared BuildFlow attendance system.
+
+HR must not create a second independent attendance database.
+
+## Attendance overview
+
+Show:
+- Total workforce expected today.
+- Present.
+- Absent.
+- Late arrivals.
+- Early departures.
+- Half-day records.
+- On approved leave.
+- Missing check-outs.
+- Pending supervisor verification.
+- Attendance exceptions.
+
+## Attendance table
+
+Columns:
+- Employee.
+- Employee ID.
+- Project.
+- Site.
+- Shift.
+- Check-in.
+- Check-out.
+- Total working duration.
+- Attendance status.
+- Verification status.
+- Last update.
+
+Filters:
+- Date range.
+- Employee.
+- Project.
+- Site.
+- Department.
+- Employment type.
+- Shift.
+- Attendance status.
+- Verification status.
+
+## Attendance statuses
+
+- Present.
+- Absent.
+- Late.
+- Half Day.
+- On Leave.
+- Weekly Off.
+- Holiday.
+- Missing Check-Out.
+- Pending Verification.
+- Exception.
+
+Allow HR to open the complete attendance record.
+
+Display:
+- Check-in time.
+- Check-out time.
+- Selfie evidence, if collected.
+- GPS coordinates or location evidence, if permitted.
+- Geofence result.
+- Supervisor verification.
+- Correction history.
+- Exception reason.
+- Audit history.
+
+Access to photographs and location data must be permission-controlled and limited to legitimate attendance purposes.
+
+# 9. ATTENDANCE EXCEPTIONS
+
+Create a dedicated exception management centre.
+
+This page must help HR investigate unusual or incomplete attendance records.
+
+Exception types:
+- Missing Check-In.
+- Missing Check-Out.
+- Duplicate Check-In.
+- Outside Geofence.
+- GPS Unavailable.
+- Poor GPS Accuracy.
+- Selfie Missing.
+- Selfie Verification Pending.
+- Late Arrival.
+- Early Departure.
+- Excessive Working Duration.
+- Offline Attendance Pending Sync.
+- Supervisor Verification Pending.
+- Conflicting Attendance Records.
+
+## Exception dashboard
+
+Display:
+- Total exceptions.
+- Critical exceptions.
+- Pending review.
+- Assigned for verification.
+- Resolved.
+- Rejected.
+
+## Exception review workspace
+
+Each exception must include:
+- Exception ID.
+- Employee.
+- Employee ID.
+- Project.
+- Site.
+- Date.
+- Shift.
+- Exception category.
+- Original attendance event.
+- Recorded timestamp.
+- Device or submission context, where available.
+- Supporting evidence.
+- Supervisor remarks.
+- HR remarks.
+- Current status.
+
+Actions:
+- Accept Valid Attendance.
+- Request Supervisor Verification.
+- Request Employee Clarification.
+- Approve Correction.
+- Reject Correction.
+- Escalate to HR Manager.
+
+Do not allow HR to silently rewrite attendance history.
+
+When a correction is approved:
+- Preserve the original record.
+- Create a corrected version.
+- Record who approved it.
+- Record the reason.
+- Record the timestamp.
+- Maintain the full audit history.
+
+## Exception workflow
+
+Employee or system raises exception → Supervisor review → HR review when required → Approval by authorised role → Corrected attendance record.
+
+Some simple exception categories may follow a shorter company-configured workflow.
+
+Attendance changes that affect wages must be traceable and available to the authorised payroll process.
+
+# 10. LEAVE MANAGEMENT
+
+Build a complete leave management module.
+
+## Leave overview
+
+Display:
+- Leave requests today.
+- Pending approvals.
+- Approved leave.
+- Rejected leave.
+- Employees currently on leave.
+- Upcoming scheduled leave.
+- Leave balance overview.
+
+## Leave types
+
+Allow companies to configure:
+- Casual Leave.
+- Sick Leave.
+- Earned Leave.
+- Annual Leave.
+- Maternity Leave.
+- Paternity Leave.
+- Compensatory Off.
+- Unpaid Leave.
+- Special Leave.
+- Other company-defined leave types.
+
+Do not assume the same leave entitlement applies to all employment categories.
+
+## Leave request table
+
+Columns:
+- Employee.
+- Employee ID.
+- Department.
+- Project.
+- Leave type.
+- From date.
+- To date.
+- Number of days.
+- Reason.
+- Supporting document.
+- Request status.
+- Approver.
+
+## Leave request details
+
+Show:
+- Employee information.
+- Leave balance where applicable.
+- Requested dates.
+- Overlapping shift or project assignment.
+- Supporting documents.
+- Previous leave history.
+- Manager remarks.
+
+Actions:
+- Approve.
+- Reject.
+- Request Clarification.
+- Forward to HR Manager.
+
+Approval rules must be configurable by company policy.
+
+## Leave calendar
+
+Create a calendar view with:
+- Approved leave.
+- Pending requests.
+- Team leave distribution.
+- Project-wise leave.
+- Site-wise leave.
+- Potential workforce shortage indicators.
+
+Display overlapping leave requests that may affect construction-site staffing.
+
+## Leave policies
+
+Authorised HR users can configure:
+- Leave types.
+- Eligibility.
+- Accrual rules.
+- Carry-forward rules.
+- Maximum consecutive days.
+- Approval hierarchy.
+- Document requirements.
+- Holiday calendar.
+- Weekly off rules.
+
+Apply effective dates to policy changes. Do not silently recalculate old leave records under new policies.
+
+# 11. EMPLOYEE DOCUMENT MANAGEMENT
+
+Create a central employee document repository.
+
+Categories:
+- Identity Documents.
+- Address Proof.
+- Employment Agreements.
+- Appointment Letters.
+- Qualification Certificates.
+- Training Certificates.
+- Safety Certificates.
+- Medical Fitness Documents, only where required and with restricted access.
+- Experience Letters.
+- Resignation Letters.
+- Exit Documents.
+- Other HR Documents.
+
+## Document table
+
+Display:
+- Employee.
+- Document name.
+- Category.
+- Issue date.
+- Expiry date.
+- Upload date.
+- Verification status.
+- Verified by.
+- Last updated.
+
+## Document functionality
+
+- Upload.
+- Preview.
+- Download when authorised.
+- Verify.
+- Reject.
+- Request replacement.
+- Track versions.
+- Set expiry reminders.
+- Search and filter.
+- View audit history.
+
+Create alerts:
+- Expiring in 30 days.
+- Expiring in 15 days.
+- Expiring in 7 days.
+- Already expired.
+
+Allow companies to configure reminder thresholds.
+
+Use private storage, role-based access and short-lived signed download URLs.
+
+Never expose employee documents through public URLs.
+
+# 12. CONTRACTOR WORKFORCE MANAGEMENT
+
+Construction companies use both direct employees and contractor-provided workers.
+
+Create a dedicated Contractor Workforce page.
+
+## Contractor directory
+
+Display:
+- Contractor company.
+- Contractor contact person.
+- Contact number.
+- Agreement status.
+- Agreement start and end dates.
+- Assigned projects.
+- Assigned sites.
+- Number of registered workers.
+- Compliance status.
+- Active/inactive status.
+
+## Contractor worker records
+
+Fields:
+- Worker ID.
+- Full name.
+- Contractor.
+- Trade.
+- Employment type.
+- Assigned project.
+- Assigned site.
+- Supervisor.
+- Joining date.
+- Required documents.
+- Training status.
+- Work status.
+
+## Contractor compliance
+
+Track applicable documents:
+- Contractor agreements.
+- Relevant licences and registrations.
+- Applicable labour records.
+- Worker identity documentation.
+- Safety training records.
+- Insurance documentation where required.
+- Other company or jurisdiction-specific requirements.
+
+Display expiry reminders and compliance gaps.
+
+Do not treat contractor workers as direct company employees unless their employment relationship has been properly established.
+
+Maintain clear separation between:
+- Direct employees.
+- Contractor company records.
+- Contractor worker records.
+
+# 13. DEPARTMENTS & DESIGNATIONS
+
+Create a company workforce structure management page.
+
+## Departments
+
+Examples:
+- Engineering.
+- Project Management.
+- Site Operations.
+- Procurement.
+- Finance.
+- Human Resources.
+- Safety.
+- Quality Assurance.
+- Administration.
+- Equipment & Maintenance.
+
+Allow authorised users to:
+- Create departments.
+- Edit department information.
+- Assign department heads.
+- View employee counts.
+- View reporting structure.
+
+## Designations
+
+Examples:
+- HR Manager.
+- HR Executive.
+- Project Manager.
+- Site Manager.
+- Site Engineer.
+- Civil Engineer.
+- Supervisor.
+- Foreman.
+- Electrician.
+- Mason.
+- Carpenter.
+- General Labour.
+
+Allow:
+- Create designation.
+- Edit designation.
+- Assign department.
+- Define job description.
+- View assigned employees.
+
+Important:
+
+Designation is not a system role.
+
+For example, an employee can have the designation "Site Engineer" but should only access the Site Engineer dashboard if the correct system permissions are assigned.
+
+Do not automatically grant permissions based on a job title.
+
+# 14. COMPLIANCE CENTRE
+
+Create a dedicated compliance management centre for Indian construction companies.
+
+The goal is to help authorised HR and compliance users monitor required employment, contractor, safety and workforce documentation.
+
+## Compliance dashboard
+
+Display:
+- Total applicable requirements.
+- Completed requirements.
+- Pending requirements.
+- Overdue requirements.
+- Documents expiring soon.
+- Contractor compliance gaps.
+- Upcoming review dates.
+
+## Compliance categories
+
+Organise requirements into:
+
+### A. Employee compliance
+- Employment agreements.
+- Employee records.
+- Applicable wage and working-hour records.
+- Leave records.
+- Required employee documents.
+- Employment-related registers and records.
+
+### B. Contractor compliance
+- Contractor agreements.
+- Applicable contractor registrations and licences.
+- Worker records.
+- Applicable statutory documents.
+- Required workforce records.
+
+### C. Social security and statutory records
+
+Track applicable requirements relating to:
+- EPF.
+- ESI.
+- Professional Tax.
+- Labour Welfare Fund.
+- TDS.
+- Other applicable employment and payroll obligations.
+
+### D. Construction and site compliance
+
+Track applicable requirements relating to:
+- Construction worker safety training.
+- Safety induction.
+- Relevant worker certifications.
+- Medical fitness documentation where legally or operationally required.
+- Site safety records.
+- Applicable construction worker welfare requirements.
+- Required incident and inspection records.
+
+### E. Company and establishment records
+
+Track relevant:
+- Establishment registrations.
+- Licences.
+- Renewals.
+- Applicable returns.
+- Supporting certificates.
+- Inspection records.
+
+## Compliance register
+
+Every compliance record must contain:
+
+- Compliance ID.
+- Requirement name.
+- Category.
+- Applicable project or establishment.
+- Jurisdiction.
+- Responsible person.
+- Required document.
+- Applicable period.
+- Due date.
+- Last completed date.
+- Next review date.
+- Current status.
+- Supporting evidence.
+- Reviewer.
+- Remarks.
+
+Statuses:
+- Not Applicable.
+- Not Started.
+- In Progress.
+- Pending Review.
+- Compliant.
+- Expiring Soon.
+- Overdue.
+- Non-Compliant.
+
+## Compliance calendar
+
+Create a calendar showing:
+- Upcoming deadlines.
+- Document renewals.
+- Certificate expiries.
+- Review dates.
+- Scheduled audits.
+- Pending submissions.
+
+## Compliance workflow
+
+Requirement created → Assigned to responsible person → Document submitted → Reviewed → Accepted or rejected → Next review date scheduled.
+
+Allow:
+- Upload evidence.
+- Assign compliance tasks.
+- Add remarks.
+- Request corrections.
+- Escalate overdue requirements.
+- Export compliance reports.
+
+## Critical legal and compliance rule
+
+Do not hardcode statutory rates, thresholds, eligibility, forms, deadlines or legal requirements as permanent constants.
+
+Compliance applicability depends on:
+- State and jurisdiction.
+- Establishment type.
+- Company size and coverage.
+- Employee category.
+- Employment relationship.
+- Current legislation and effective dates.
+
+Create a configurable compliance rules structure with:
+- Jurisdiction.
+- Requirement.
+- Applicability conditions.
+- Effective date.
+- Expiry date.
+- Source/reference.
+- Last verified date.
+- Responsible reviewer.
+
+Show a clear notice that compliance information must be verified against current official requirements and reviewed by a qualified compliance professional.
+
+The dashboard must not claim legal certification merely because all uploaded documents are present.
+
+# 15. TRAINING & CERTIFICATIONS
+
+Create a training and certification management page.
+
+Construction-specific training examples:
+- Site Safety Induction.
+- PPE Training.
+- Working at Height.
+- Electrical Safety.
+- Fire Safety.
+- First Aid.
+- Equipment Operation.
+- Confined Space Safety.
+- Quality Procedures.
+- Other company-defined training.
+
+Display:
+- Employee.
+- Training name.
+- Training provider.
+- Completion date.
+- Expiry date.
+- Certificate.
+- Verification status.
+
+Features:
+- Assign training.
+- Track completion.
+- Upload certificates.
+- Verify certificates.
+- Set expiry reminders.
+- Identify workers missing mandatory site induction.
+
+Do not automatically mark an employee as trained simply because they were assigned a training course.
+
+# 16. HR REQUESTS & EMPLOYEE SUPPORT
+
+Create a central HR request centre.
+
+Request categories:
+- Personal Information Update.
+- Address Change.
+- Document Update.
+- Employment Letter.
+- Experience Certificate.
+- Leave Clarification.
+- Attendance Correction Request.
+- Resignation.
+- General HR Query.
+- Other.
+
+Request statuses:
+- Submitted.
+- Under Review.
+- Assigned.
+- Awaiting Employee.
+- Approved.
+- Rejected.
+- Resolved.
+- Closed.
+
+Display:
+- Request ID.
+- Employee.
+- Request category.
+- Submission date.
+- Assigned HR user.
+- Priority.
+- Current status.
+- Last update.
+
+Allow HR to:
+- Assign requests.
+- Add internal remarks.
+- Respond to employees.
+- Request supporting documents.
+- Approve or reject eligible requests.
+- Close resolved requests.
+
+Maintain conversation and status history.
+
+# 17. HR REPORTS & ANALYTICS
+
+Create a dedicated HR analytics centre.
+
+Report categories:
+
+### Workforce reports
+- Employee headcount.
+- Active vs inactive employees.
+- Department-wise workforce.
+- Project-wise workforce.
+- Site-wise workforce.
+- Employment-type distribution.
+- Trade-wise workforce.
+
+### Employee lifecycle reports
+- New joiners.
+- Employee exits.
+- Employee transfers.
+- Probation due.
+- Contract renewals.
+- Notice period.
+
+### Attendance reports
+- Monthly attendance.
+- Attendance exceptions.
+- Late arrivals.
+- Missing check-outs.
+- Site-wise attendance.
+- Attendance correction history.
+
+### Leave reports
+- Leave utilisation.
+- Leave balance.
+- Leave approvals.
+- Project-wise leave distribution.
+- Leave overlap and staffing risk.
+
+### Compliance reports
+- Document expiry.
+- Pending compliance.
+- Overdue compliance.
+- Contractor compliance.
+- Training and certification expiry.
+
+Filters:
+- Date range.
+- Project.
+- Site.
+- Department.
+- Designation.
+- Employment type.
+- Employee status.
+
+Allow PDF, Excel and CSV exports where implemented.
+
+All reports must respect HR user permissions and selected filters.
+
+# 18. NOTIFICATIONS & REMINDERS
+
+Create a notification centre for HR users.
+
+Examples:
+- New employee registered.
+- Onboarding incomplete.
+- Document verification required.
+- Attendance exception pending.
+- Leave request submitted.
+- Leave approval pending.
+- Contract expiring.
+- Employee probation review due.
+- Compliance deadline approaching.
+- Certificate expiring.
+- Contractor document expired.
+- Employee resignation submitted.
+
+Features:
+- Read/unread.
+- Notification categories.
+- Priority.
+- Timestamp.
+- Related employee or record.
+- Direct navigation to record.
+- Mark all as read.
+- Notification preferences.
+
+# 19. HR SETTINGS
+
+Create configurable HR settings.
+
+## Employee settings
+- Employee ID generation format.
+- Employment types.
+- Employment statuses.
+- Required employee fields.
+- Employee document categories.
+
+## Attendance settings
+- Attendance exception categories.
+- Correction workflow.
+- Approval hierarchy.
+- Grace periods.
+- Shift definitions.
+- Weekly offs and holiday calendar.
+
+Attendance rules must integrate with the shared attendance system.
+
+## Leave settings
+- Leave types.
+- Leave policies.
+- Accrual rules.
+- Approval hierarchy.
+- Carry-forward settings.
+- Holiday calendar.
+
+## Compliance settings
+- Applicable jurisdictions.
+- Requirement categories.
+- Reminder thresholds.
+- Responsible officers.
+- Review workflows.
+
+## Access settings
+- HR roles.
+- Permission groups.
+- Department scope.
+- Project and site scope.
+
+# 20. ROLE-BASED ACCESS CONTROL
+
+Create clear HR roles and permissions.
+
+Example roles:
+
+### HR Administrator
+- Manage employee directory.
+- Manage onboarding.
+- Manage employment records.
+- Review attendance exceptions.
+- Manage leave workflows.
+- Manage employee documents.
+- View HR reports.
+
+### HR Manager
+- All permitted HR administration functions.
+- Approve configured HR workflows.
+- Manage HR team assignments.
+- Review escalations.
+- Monitor workforce policies.
+
+### HR Executive
+- Create and update permitted employee records.
+- Process onboarding.
+- Review assigned documents.
+- Process assigned HR requests.
+
+### Attendance Officer
+- View attendance records.
+- Investigate exceptions.
+- Request supervisor verification.
+- Process authorised corrections.
+
+### Compliance Officer
+- Manage compliance register.
+- Review required documents.
+- Track renewals and deadlines.
+- Assign compliance tasks.
+- Export compliance reports.
+
+### Recruitment / Onboarding Officer
+- Create onboarding records.
+- Track joining progress.
+- Verify assigned documents.
+- Coordinate employee activation.
+
+These roles must be configurable. Small companies may assign several roles to one person.
+
+Important access restrictions:
+- HR users must not automatically receive unrestricted Finance access.
+- Payroll salary details require explicit permission.
+- Sensitive employee information must be restricted.
+- Medical and other sensitive documents require additional access restrictions.
+- Project Managers should see workforce information necessary for project operations, not private HR records.
+- Site Managers should only access permitted employee information for assigned sites.
+- Employees should only access their own records.
+
+# 21. DATA ARCHITECTURE
+
+Prepare reusable data entities for:
+
+- Organizations.
+- Organization memberships.
+- Employees.
+- Employee profiles.
+- Employment records.
+- Employment history.
+- Departments.
+- Designations.
+- Employee assignments.
+- Project assignments.
+- Site assignments.
+- Employee onboarding.
+- Onboarding tasks.
+- Employee documents.
+- Document versions.
+- Document verification.
+- Attendance records.
+- Attendance exceptions.
+- Attendance correction requests.
+- Attendance audit history.
+- Leave types.
+- Leave policies.
+- Leave balances.
+- Leave requests.
+- Leave approvals.
+- Contractor companies.
+- Contractor workers.
+- Contractor agreements.
+- Compliance requirements.
+- Compliance records.
+- Compliance evidence.
+- Compliance reviews.
+- Training courses.
+- Training assignments.
+- Certifications.
+- HR requests.
+- HR request messages.
+- Notifications.
+- Approval workflows.
+- Activity logs.
+
+Use effective dates for historical employment, department, designation and assignment changes.
+
+Do not create duplicate attendance, payroll or procurement databases. Reuse shared BuildFlow records and expose only permitted data to HR.
+
+# 22. SECURITY & DATA PRIVACY
+
+BuildFlow is a multi-tenant SaaS application.
+
+Enforce:
+- Strict tenant isolation.
+- Role-based and permission-based access.
+- Project and site scope.
+- Supabase Row Level Security when integrated.
+- Server-side validation.
+- Private document storage.
+- Secure signed URLs.
+- Audit logging.
+- Session security.
+- No sensitive data in public API responses.
+- No frontend-only permission checks.
+
+Sensitive data includes:
+- Personal identification documents.
+- Contact information.
+- Emergency contacts.
+- Medical documents.
+- Salary information.
+- Employment agreements.
+- Private HR notes.
+
+Apply least-privilege access.
+
+Every sensitive record view or change should be auditable where appropriate.
+
+# 23. SHARED WORKFLOWS WITH OTHER BUILDFLOW DASHBOARDS
+
+The HR module must work as part of one connected construction management system.
+
+Implement these shared workflows:
+
+### Employee onboarding
+HR creates employee → Documents submitted → HR verifies → Required approvals → Employee activated → Employee account becomes available.
+
+### Attendance
+Employee checks in with selfie and permitted location evidence → Supervisor reviews exceptions → HR reviews applicable exceptions → Approved attendance is shared with payroll.
+
+### Leave
+Employee submits leave → Configured reporting manager reviews → HR processes or approves according to policy → Site and project workforce views update.
+
+### Employee transfer
+HR initiates transfer → Required approval → New project/site assignment becomes active on effective date → Historical assignment preserved.
+
+### Contractor onboarding
+Contractor company registered → Worker details submitted → Documents verified → Required safety induction completed → Worker activated for permitted site access.
+
+### Compliance
+HR or Compliance Officer assigns requirement → Responsible person submits evidence → Reviewer verifies → Status updated → Renewal reminder scheduled.
+
+### Payroll integration
+HR maintains authorised employee and employment records → Approved attendance and leave data are made available to payroll → Finance calculates and processes payments.
+
+HR must not mark salary payments as completed or bypass Finance approval.
+
+# 24. SAMPLE DEMO DATA
+
+Create realistic Indian construction-industry demo records.
+
+Use example employees:
+
+1. Rahul Kumar — Electrician — Permanent — Engineering — Hyderabad Commercial Tower.
+2. Ramesh Yadav — Mason — Daily Wage — Site Operations — Bengaluru Residential Complex.
+3. Suresh Kumar — Steel Fixer — Contractual — Site Operations — Vijayawada Infrastructure Development.
+4. Mahesh Rao — Site Engineer — Permanent — Engineering — Hyderabad Commercial Tower.
+5. Anjali Reddy — HR Executive — Permanent — Human Resources — Head Office.
+6. Prakash Naidu — Supervisor — Permanent — Site Operations — Bengaluru Residential Complex.
+
+Create:
+- Employee IDs.
+- Employee profiles.
+- Department assignments.
+- Reporting managers.
+- Project and site assignments.
+- Onboarding records.
+- Sample attendance exceptions.
+- Leave requests.
+- Expiring documents.
+- Compliance tasks.
+- Contractor records.
+- Training records.
+
+All demo information must be clearly labelled as sample data.
+
+Ensure dashboard counts and charts are derived from these consistent records.
+
+# 25. FUNCTIONAL REQUIREMENTS
+
+Every sidebar item must open a working page.
+
+Implement:
+- Search.
+- Filters.
+- Sorting.
+- Pagination.
+- Employee profile navigation.
+- Project and site filters.
+- Forms with validation.
+- Multi-step onboarding.
+- Document uploads in the mock environment.
+- Document verification actions.
+- Attendance exception workflows.
+- Leave approval workflows.
+- Compliance status changes.
+- Notification actions.
+- Confirmation dialogs.
+- Activity history.
+- Export actions where implemented.
+- Loading states.
+- Empty states.
+- Error states.
+- Toast notifications.
+
+Do not create buttons that do nothing.
+
+If a function is not implemented, show a clear disabled or coming-soon state.
+
+# 26. RESPONSIVE MOBILE EXPERIENCE
+
+The HR module must be fully usable on phones and tablets.
+
+At 360px, 390px and 430px:
+- No horizontal page overflow.
+- Employee directory must switch to mobile cards.
+- Employee profiles must use stacked sections.
+- Onboarding must use a mobile step wizard.
+- Attendance exceptions must have easy-to-open details.
+- Leave approvals must be touch-friendly.
+- Compliance documents must support mobile upload.
+- Forms must use suitable input types.
+- Tables must transform into cards or controlled horizontal views.
+
+Use a compact mobile header and bottom navigation for:
+- Overview.
+- Employees.
+- Attendance.
+- Leaves.
+- More.
+
+# 27. DEVELOPMENT PHASES
+
+Build the complete architecture but implement it progressively.
+
+### Phase 1 — HR foundation
+- Application shell.
+- Overview dashboard.
+- Employee Directory.
+- Employee Profile.
+- Employee Onboarding.
+- Employment Records.
+
+### Phase 2 — Attendance & leave
+- Attendance Management.
+- Attendance Exceptions.
+- Leave Management.
+- Leave Calendar.
+
+### Phase 3 — Documents & compliance
+- Employee Documents.
+- Contractor Workforce.
+- Compliance Centre.
+- Compliance Calendar.
+- Training & Certifications.
+
+### Phase 4 — Administration & analytics
+- Departments & Designations.
+- HR Requests.
+- HR Reports & Analytics.
+- Notifications.
+- HR Settings.
+- Role & Permission Management.
+
+Start by implementing Phase 1 with complete functionality and a polished UI. Then continue with the remaining phases without changing the established design system or data architecture.
+
+# 28. FINAL EXPECTATION
+
+The finished application must feel like a professional HR and compliance platform used by real construction companies.
+
+Prioritise:
+- Employee lifecycle management.
+- Fast employee search.
+- Accurate employment records.
+- Simple onboarding.
+- Reliable attendance exception handling.
+- Transparent leave workflows.
+- Document expiry tracking.
+- Contractor workforce management.
+- Compliance visibility.
+- Strong data privacy.
+- Connected workflows across BuildFlow roles.
+- Excellent mobile usability.
+
+Do not build a generic HRMS template. Build a dedicated **BuildFlow HR & Compliance Workspace** designed specifically for construction workforce operations in India.

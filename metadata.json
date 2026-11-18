@@ -1,0 +1,8 @@
+{
+  "name": "BuildFlow — HR & Compliance Workspace",
+  "description": "Enterprise HR, Workforce Directory, Onboarding, Attendance Exceptions, Leave Management, Contractor Workforce & Compliance Platform for Indian Construction Operations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
